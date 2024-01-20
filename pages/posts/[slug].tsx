@@ -39,7 +39,8 @@ export default function Post({ post, posts, preview }) {
                   property="og:image"
                   content={post.featuredImage?.node.sourceUrl}
                 />
-              </Head>
+                </Head>
+
               <PostHeader
                 title={post.title}
                 coverImage={post.featuredImage}

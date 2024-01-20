@@ -6,6 +6,7 @@ import Container from '../container';
 const AboutPage: React.FC = () => {
   return (
     <Container>
+      <div className="max-w-4xl mx-auto">
       <h1>About Page</h1>
       <p>
         John is the kind of Full-Stack Developer and Digital Architect who
@@ -38,6 +39,7 @@ const AboutPage: React.FC = () => {
         great developer, but a true architect of the digital age. He's not just
         writing code; he's writing the future, one line at a time.
       </p>
+      </div>
     </Container>
   );
 };

@@ -9,7 +9,9 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
+  Image,
 } from "@nextui-org/react";
+
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -36,6 +38,11 @@ export default function App() {
         />
         <Link href="/">
           <NavbarBrand>
+            <Image
+              width={300}
+              alt="NextUI hero Image"
+              src="../public/images/OIG.jpg"
+            />
             <p className="font-bold text-inherit">SCHIBELLI.com</p>
           </NavbarBrand>
         </Link>
@@ -65,7 +72,9 @@ export default function App() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="https://schibelli.com/wp-admin/" target="_blank">Login</Link>
+          <Link href="https://schibelli.com/wp-admin/" target="_blank">
+            Login
+          </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>

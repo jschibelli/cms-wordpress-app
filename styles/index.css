@@ -5,6 +5,14 @@
 body.dark-mode {
     background-color: #333;
     color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #007bff;
+    }
 }
 
 p {
@@ -55,6 +63,11 @@ h6 {
 /* Start purging... */
 
 @tailwind utilities;
+bg-background\/70 {
+    background-color: hsl(var(--nextui-background) / 0);
+    border-bottom: 1px solid;
+}
+
 
 /* Stop purging. */
 
