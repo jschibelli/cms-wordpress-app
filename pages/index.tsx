@@ -7,6 +7,8 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import { getAllPostsForHome } from "../lib/api";
 import { CMS_NAME } from "../lib/constants";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node;

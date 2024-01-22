@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './about.module.scss';
 import Container from '../container';
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 
 const AboutPage: React.FC = () => {
   return (
     <Container>
+
       <div className="max-w-4xl mx-auto">
         <h1>About Page</h1>
         <p>

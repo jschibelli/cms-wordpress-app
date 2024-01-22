@@ -13,6 +13,11 @@ body.dark-mode {
     h6 {
         color: #007bff;
     }
+    nav {
+        a {
+            color: #fff;
+        }
+    }
 }
 
 p {
@@ -47,6 +52,13 @@ h5 {
 h6 {
     font-size: 1rem;
     /* 16px */
+}
+
+nav {
+    a {
+        color: #333;
+        padding: 15px;
+    }
 }
 
 

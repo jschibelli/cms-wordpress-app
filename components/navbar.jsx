@@ -6,10 +6,9 @@ import {
   NavbarItem,
   Link,
   Button,
+  NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarMenuToggle,
-  Image,
 } from "@nextui-org/react";
 
 export default function App() {
@@ -35,16 +34,9 @@ export default function App() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <Link href="/">
-          <NavbarBrand>
-            <Image
-              width={300}
-              alt="NextUI hero Image"
-              src="../public/images/OIG.jpg"
-            />
-            <p className="font-bold text-inherit">SCHIBELLI.com</p>
-          </NavbarBrand>
-        </Link>
+        <NavbarBrand>
+          <p className="font-bold text-inherit">SCHIBELLI.com</p>
+        </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -60,22 +52,17 @@ export default function App() {
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/">
-            Newsletter
+            Coffee & Code
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/contact">
             Contact
           </Link>
-        </NavbarItem>
+          </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="https://schibelli.com/wp-admin/" target="_blank">
-            Login
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
+
+
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -96,6 +83,7 @@ export default function App() {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
+
     </Navbar>
   );
 }
