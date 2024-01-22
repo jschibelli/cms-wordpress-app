@@ -63,9 +63,10 @@ h6 {
 /* Start purging... */
 
 @tailwind utilities;
-bg-background\/70 {
+.bg-background\/70 {
     background-color: hsl(var(--nextui-background) / 0);
-    border-bottom: 1px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
