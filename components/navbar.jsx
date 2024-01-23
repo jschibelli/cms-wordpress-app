@@ -1,89 +1,27 @@
-import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Button,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-} from "@nextui-org/react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Link from "next/link";
+import styles from "../styles/navbar.module.css";
 
-export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
-
+function NavbarComponent() {
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
-        <NavbarBrand>
-          <p className="font-bold text-inherit">SCHIBELLI.com</p>
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="/about">
-            About
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="/portfolio" aria-current="page">
-            Portfolio
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="/">
-            Coffee & Code
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="/contact">
-            Contact
-          </Link>
-          </NavbarItem>
-      </NavbarContent>
-
-
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-
+    <Navbar expand="lg" className="bg-body-tertiary main-nav">
+      <Container>
+        <Navbar.Brand href="/">SCHIBELLI.com</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+            <Nav.Link href="/">Coffee & Code</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 }
+
+export default NavbarComponent;
