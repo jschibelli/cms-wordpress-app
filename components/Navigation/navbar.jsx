@@ -10,6 +10,7 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
+import Styles from "./navbar.module.scss";
 
 
 
@@ -30,6 +31,7 @@ export default function NavbarComponent() {
   ];
 
   return (
+    <div className="MainNav">
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -93,6 +95,7 @@ export default function NavbarComponent() {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
-    </Navbar>
+      </Navbar>
+      </div>
   );
 }
