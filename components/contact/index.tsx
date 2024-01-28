@@ -1,35 +1,70 @@
-import React from "react";
+import {React, useState} from "react";
 import Container from "../container";
-import { Button } from "@nextui-org/react";
+import { Button, Input, Textarea, Spacer } from "@nextui-org/react";
+
 import styles from "./contact.module.css";
 import Footer from "../footer";
 import Layout from "../layout";
 
 const ContactPage: React.FC = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+  };
   return (
     <div className="max-w-1xl mx-auto">
       <Layout>
         <Container>
-          <div className={styles.container}>
-            <h1 className={styles.h1}>Contact Us</h1>
-            <h3 className={styles.center}>Let's Talk: Connect With Me!</h3>
-            <form className={styles.form}>
-              <div className={styles.formGroup}>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" />
+          <div className={styles.resume}>
+            <div className="max-w-7xl mx-auto">
+              <div className="px-4 py-5 my-5 text-center">
+                <h1 className="display-5 fw-bold text-body-emphasis">
+                  Let's Connect
+                </h1>
+                <div className="col-lg-6 mx-auto">
+                  <p className="lead mb-4">
+                    Hey there! Thanx for stopping by. Do you have an interest in colaborating on a project, Got a
+                    question, or just want to say hi? I'm all
+                    ears! Your thoughts and feedback are super impportant. So go
+                    ahead, drop me a line, and let’s have a chat like old friends
+                  </p>
+                  <p>
+                    <cite>- John</cite>
+                  </p>
+                  <form onSubmit={handleSubmit}>
+                    <Input
+                      width="100%"
+                      placeholder="Your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <Spacer y={1} />
+                    <Input
+                      width="100%"
+                      type="email"
+                      placeholder="Your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <Spacer y={1} />
+                    <Textarea
+                      width="100%"
+                      placeholder="Your message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                    <Spacer y={1} />
+                    <Button type="success" htmlType="submit">
+                      Send Message
+                    </Button>
+                  </form>
+                </div>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="email">Email*:</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-              </div>
-              <Button color="primary" variant="ghost" type="submit">
-                Ghost
-              </Button>
-            </form>
+            </div>
           </div>
         </Container>
       </Layout>
