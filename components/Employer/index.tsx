@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import styles from "./employer.module.scss";
+import Container from "../container";
+import Layout from "../layout";
 
 const Employers = () => {
   const [employers, setEmployers] = useState([]);
@@ -12,18 +15,57 @@ const Employers = () => {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  function formatDateString(ymdString) {
+    // Parse the string
+    const year = ymdString.substring(0, 4);
+    const month = ymdString.substring(4, 6);
+    const day = ymdString.substring(6, 8);
+
+    // Create a Date object
+    const date = new Date(`${year}-${month}-${day}`);
+
+    // Format the date
+    const options = { year: "numeric", month: "long" };
+    return date.toLocaleDateString("en-US", options);
+  }
+
   return (
-    <div>
-      {employers.map((employer) => (
-        <div key={employer.id}>
-          <h4>{employer.acf.position}</h4>
-          {/* Assuming 'employer' is an object with a 'name' field */}
-          <p>{employer.title.rendered} - {employer.acf.location}</p>
-          <p>{employer.acf.start_date} - {employer.acf.end_date}</p>
-          <p>{employer.acf.job_description}</p>
+        <div className={styles.resume}>
+          {employers.map((employer) => (
+            <div key={employer.id}>
+              <div className="employer my-20">
+                <ul className={styles.timeline}>
+                  <li className={styles.resumeList}>
+                    <span className={styles.lineLeft}></span>
+                    <div className={styles.year}>
+                      <span className={styles.to}>
+                        {formatDateString(employer.acf?.end_date) ||
+                          "Present"}
+                      </span>
+                      <span className={styles.from}>
+                        {formatDateString(employer.acf?.start_date)}
+                      </span>
+                    </div>
+                    <div className={styles.content}>
+                      <h4 className={styles.title}>{employer.acf.position}</h4>
+                      <h5 className={styles.subtitle}>
+                        {employer.title.rendered} - {employer.acf.location}
+                      </h5>
+                      <div className={styles.info}>
+                        <div
+
+                          dangerouslySetInnerHTML={{
+                            __html: employer.acf?.job_description || "",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
   );
 };
 

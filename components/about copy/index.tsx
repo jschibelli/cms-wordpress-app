@@ -6,6 +6,10 @@ import Layout from '../layout';
 import Button from "react-bootstrap/Button";
 import Testimonials from '../Testimonials/testimonials';
 
+
+
+
+
 const AboutPage: React.FC = () => {
   return (
     <Layout>
