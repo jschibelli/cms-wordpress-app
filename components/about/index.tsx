@@ -1,44 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./about.module.scss";
 import Footer from "../footer";
 import Container from "../container";
 import Layout from "../layout";
 import Button from "react-bootstrap/Button";
 import Testimonials from "../Testimonials/testimonials";
+import Employers from "../Employer";
 
 const AboutPage: React.FC = () => {
-  const [employers, setEmployers] = useState([]);
-
-  useEffect(() => {
-    fetch('https://schibelli.com/wp-json/wp/v2/employer')
-      .then(response => response.json())
-      .then(data => {
-        setEmployers(data);
-      })
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
-
   return (
     <Layout>
       <Container>
-        <div>
-          <h2>Employers</h2>
-          {employers.map((employer) => (
-            <div key={employer.id}>
-              <h3>{employer.title.rendered}</h3>
-              {/* Assuming 'employer' is an object with a 'name' field */}
-              <p>Name: {employer.acf.employer.title}</p>
-            </div>
-          ))}
-        </div>
-
-
-
-
-
-
-
-
         <div className={styles.resume}>
           <div className="max-w-7xl mx-auto">
             <div className="px-4 py-5 my-5 text-center">
