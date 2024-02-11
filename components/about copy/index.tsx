@@ -1,44 +1,19 @@
-import React, { useEffect, useState } from "react";
-import styles from "./about.module.scss";
+import React from 'react';
+import styles from './about.module.scss';
 import Footer from "../footer";
-import Container from "../container";
-import Layout from "../layout";
+import Container from '../container';
+import Layout from '../layout';
 import Button from "react-bootstrap/Button";
-import Testimonials from "../Testimonials/testimonials";
+import Testimonials from '../Testimonials/testimonials';
+
+
+
+
 
 const AboutPage: React.FC = () => {
-  const [employers, setEmployers] = useState([]);
-
-  useEffect(() => {
-    fetch('https://schibelli.com/wp-json/wp/v2/employer')
-      .then(response => response.json())
-      .then(data => {
-        setEmployers(data);
-      })
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
-
   return (
     <Layout>
       <Container>
-        <div>
-          <h2>Employers</h2>
-          {employers.map((employer) => (
-            <div key={employer.id}>
-              <h3>{employer.title.rendered}</h3>
-              {/* Assuming 'employer' is an object with a 'name' field */}
-              <p>Name: {employer.acf.employer.title}</p>
-            </div>
-          ))}
-        </div>
-
-
-
-
-
-
-
-
         <div className={styles.resume}>
           <div className="max-w-7xl mx-auto">
             <div className="px-4 py-5 my-5 text-center">
@@ -68,6 +43,7 @@ const AboutPage: React.FC = () => {
                         IntraWeb Technologies - Montville, New Jersey
                       </h5>
                       <div className={styles.info}>
+
                         <ul className={styles.ul}>
                           <li className={styles.resume_list_item}>
                             Proven expertise in developing and maintaining
@@ -237,7 +213,7 @@ const AboutPage: React.FC = () => {
                             Managed multiple teams of eight web development
                             instructors across four campuses in the New Jersey
                             Tri-State area.
-                          </li>
+                            </li>
                         </ul>
                       </div>
                     </div>
