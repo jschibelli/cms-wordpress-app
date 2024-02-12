@@ -24,12 +24,9 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.container}>
-              <h4>Experience</h4>
-              <Employers />
-            </div>
           </div>
         </div>
+        <Employers />
         <Testimonials />
       </Container>
     </Layout>

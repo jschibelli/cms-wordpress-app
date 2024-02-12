@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./employer.module.scss";
-import Container from "../container";
-import Layout from "../layout";
 
 const Employers = () => {
   const [employers, setEmployers] = useState([]);
