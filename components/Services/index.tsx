@@ -11,8 +11,8 @@ const Services: React.FC = () => {
   useEffect(() => {
     fetch("https://schibelli.com/wp-json/wp/v2/service")
       .then((response) => response.json())
-      .then((data) => {
-        setServices(data);
+      const sortedServices = data.sort((a, b) => a.order - b.order);
+      setServices(sortedServices);
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
