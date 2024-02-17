@@ -27,10 +27,11 @@ const ContactPage: React.FC = () => {
                 </h1>
                 <div className="col-lg-6 mx-auto">
                   <p className="lead mb-4">
-                    Hey there! Thanx for stopping by. Do you have an interest in colaborating on a project, Got a
-                    question, or just want to say hi? I'm all
-                    ears! Your thoughts and feedback are super impportant. So go
-                    ahead, drop me a line, and let’s have a chat like old friends
+                    Hey there! Thanx for stopping by. Do you have an interest in
+                    colaborating on a project, Got a question, or just want to
+                    say hi? I'm all ears! Your thoughts and feedback are super
+                    impportant. So go ahead, drop me a line, and let’s have a
+                    chat like old friends
                   </p>
                   <p>
                     <cite>- John</cite>
@@ -58,7 +59,15 @@ const ContactPage: React.FC = () => {
                       onChange={(e) => setMessage(e.target.value)}
                     />
                     <Spacer y={1} />
-                    <Button type="success" htmlType="submit">
+                    <Button
+                      type="success"
+                      htmlType="submit"
+                      radius="full"
+                      variant="outline-secondary"
+                      disableRipple
+                      className="relative overflow-visible rounded-full hover:-translate-y-1 px-12 shadow-xl bg-background/30 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:!duration-500 hover:after:scale-150 hover:after:opacity-0"
+                      size="lg"
+                    >
                       Send Message
                     </Button>
                   </form>

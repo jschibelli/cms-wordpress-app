@@ -28,12 +28,12 @@ const Employers = () => {
   }
 
   return (
-        <div className={styles.resume}>
+        <div className={styles.employer}>
           {employers.map((employer) => (
             <div key={employer.id}>
               <div className="employer my-20">
                 <ul className={styles.timeline}>
-                  <li className={styles.resumeList}>
+                  <li className={styles.employerList}>
                     <span className={styles.lineLeft}></span>
                     <div className={styles.year}>
                       <span className={styles.to}>

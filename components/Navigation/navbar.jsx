@@ -63,8 +63,8 @@ export default function NavbarComponent() {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/testbed">
-             Test Bed
+            <Link color="foreground" href="/services">
+             Services
             </Link>
           </NavbarItem>
           <NavbarItem isActive>

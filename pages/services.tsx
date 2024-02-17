@@ -2,7 +2,7 @@ import Services from "../components/Services";
 import Container from "../components/container";
 
 
-const TestBed = () => {
+const Service = () => {
   return (
 <Container>
       <Services />
@@ -11,4 +11,4 @@ const TestBed = () => {
   );
 };
 
-export default TestBed;
+export default Service;
