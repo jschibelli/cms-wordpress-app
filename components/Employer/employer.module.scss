@@ -84,18 +84,21 @@ li.employerList {
 .timeline .year .to {
     top: -18px;
     list-style-type: disc;
-    color: #fff;
+    color: #0d6efd;
     font-weight: 400;
 }
 
 .timeline .year .from {
     bottom: -18px;
-    color: #fff;
+    color: #0d6efd;
     font-weight: 400;
+    padding-top: 2rem;
 }
 
 .timeline .content {
     margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .timeline .content h4 {
@@ -107,7 +110,7 @@ li.employerList {
 }
 
 .employer .timeline .content h4 {
-    color: #fff;
+    // color: #fff;
 }
 
 .employer .timeline .content h5 {
