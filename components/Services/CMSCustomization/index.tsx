@@ -6,11 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "react-bootstrap/Button";
 
 const Cmscustomization: React.FC = () => {
+
+  // Create a state to store the services in the "CMS Customization" category
   const [cmscustomization, setCmscustomization] = useState([]);
 
   useEffect(() => {
-    // Replace '123' with the actual ID of your "Maintenance" category
+
+    // Set the ID of the "CMS Customization" category
     const cmscustomizationCategoryId = 93;
+
+    // Fetch the services in the "CMS Customization" category and set the order to ascending by menu order
     fetch(
       `https://schibelli.com/wp-json/wp/v2/service?categories=${cmscustomizationCategoryId}&order=asc&orderby=menu_order`
     )
@@ -18,12 +23,16 @@ const Cmscustomization: React.FC = () => {
       .then((data) => {
         setCmscustomization(data);
       })
+      // Log an error if one occurs
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   return (
     <div className={styles.cmscustomization}>
+      {/* Loop through the services in the "CMS Customization" category */}
       {cmscustomization.map((service) => (
+
+        // Display the service card with the service title, pricing, and content from the WordPress API response.
         <div key={service.id}>
           <div className="my-20">
             <div>
@@ -51,8 +60,8 @@ const Cmscustomization: React.FC = () => {
                       ></div>
                       <Button variant="outline-secondary" size="lg">
                         Learn More
-                      </Button>
-                    </div>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

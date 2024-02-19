@@ -1,0 +1,65 @@
+/* ChatWithGPT.css */
+
+.chat-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+}
+
+.user-message,
+.gpt-response {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.user-message {
+    background-color: #e1f5fe;
+    align-self: flex-end;
+}
+
+.gpt-response {
+    background-color: #ede7f6;
+}
+
+.chat-form {
+    display: flex;
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.send-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #5e35b1;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+
+.send-button:hover {
+    background-color: #4527a0;
+}

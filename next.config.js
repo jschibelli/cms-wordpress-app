@@ -27,3 +27,5 @@ module.exports = {
     domains: ["schibelli.com", "secure.gravatar.com"], // Add 'schibelli.com' to the allowed domains for image loading
   },
 };
+
+

@@ -4,6 +4,7 @@ import style from "./portfolio.module.scss";
 import Layout from "../layout";
 import Maintanence from "./Maintanence";
 import Cmscustomization from "./CMSCustomization";
+import ChatWithGPT from "../chatBot";
 
 const PortfolioPage: React.FC = () => {
   return (
