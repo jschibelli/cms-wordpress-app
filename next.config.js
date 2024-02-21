@@ -23,8 +23,10 @@ module.exports = {
         port, // Port from the WordPress API URL
         pathname: `${pathname}/**`, // Pathname from the WordPress API URL, allowing all paths
       },
+      { protocol: "https", hostname: "https://vfo.fzi.mybluehost.me/" },
+      { protocol: "https", hostname: "secure.gravatar.com" },
+      { protocol: "https", hostname: "i0.wp.com" },
     ],
-    domains: ["schibelli.com", "secure.gravatar.com"], // Add 'schibelli.com' to the allowed domains for image loading
   },
 };
 

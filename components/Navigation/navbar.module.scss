@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+    .MainNav .hidden {
+        display: none;
+    }
+    .MainNav .sm:hidden {
+        display: block;
+    }
+}

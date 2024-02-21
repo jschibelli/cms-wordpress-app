@@ -45,7 +45,7 @@ export default function NavbarComponent() {
 
         <NavbarContent className="sm:hidden pr-3" justify="center">
           <NavbarBrand>
-            <p className="font-bold text-inherit">SCHIBELLI.com</p>
+            <p className="font-bold text-inherit">IntraWeb Tech</p>
           </NavbarBrand>
         </NavbarContent>
 
@@ -53,7 +53,7 @@ export default function NavbarComponent() {
           <NavbarBrand>
             <p className="font-bold text-inherit">
               <Link href="/" aria-current="page">
-                SCHIBELLI.com
+                IntraWeb Technology
               </Link>
             </p>
           </NavbarBrand>
@@ -64,7 +64,7 @@ export default function NavbarComponent() {
           </NavbarItem>
           <NavbarItem>
             <Link color="foreground" href="/services">
-             Services
+              Services
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
@@ -88,18 +88,18 @@ export default function NavbarComponent() {
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                className="w-full"
                 color={
                   index === 2
-                    ? "warning"
+                    ? "primary"
                     : index === menuItems.length - 1
                     ? "danger"
                     : "foreground"
                 }
-                href="/about"
+                className="w-full"
+                href="#"
                 size="lg"
               >
-                About
+                {item}
               </Link>
             </NavbarMenuItem>
           ))}
@@ -108,3 +108,4 @@ export default function NavbarComponent() {
     </div>
   );
 }
+
